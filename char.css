@@ -1,0 +1,132 @@
+ .character {
+    position: relative;
+    margin: 30px;
+    height:120px;
+    float:left;
+}
+.character div {
+    border : #ccc solid 1px;
+    background: #fff;
+    position: absolute;
+}
+.head {
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    border-radius: 50%;
+}
+.body {
+    width: 15px;
+    height: 25px;
+    top: 50px;
+    left: 20px;
+    z-index: 1;
+     border-radius: 20%;
+}
+.arm {
+    width: 10px;
+    height: 20px;
+    top:55px;
+    transform-origin: 50% 0;
+     border-radius: 30%;
+}
+.leg {
+    width: 10px;
+    height: 25px;
+    top: 70px;
+    transform-origin: 50% 0;
+     border-radius: 30%;
+}
+.hand {
+    width: 15px;
+    height: 15px;
+    top: 17px;
+    left:-5px;
+     border-radius: 50%;
+}
+.foot {
+    width: 15px;
+    height: 10px;
+    top: 20px;
+     border-radius: 30%;
+}
+.arm.right {
+    transform: rotate(-20deg);
+    left:30px
+}
+.arm.left {
+    z-index: 3;
+    left: 15px;
+    transform: rotate(20deg);
+}
+.leg.left {
+    left: 20px;
+    transform: rotate(20deg);
+    z-index:1;
+}
+.leg.right {
+    left: 25px;
+    transform: rotate(-20deg);
+    z-index:0;
+}
+.left.arm, .right.leg {
+    animation: walk infinite 0.7s;
+}
+.right.arm, .left.leg {
+    animation: walk2 infinite 0.7s;
+}
+.character {
+    animation: move infinite 1s linear;
+}
+.body {
+    animation: breath alternate infinite 1s;
+}
+@keyframes walk {
+     0% {
+        transform: rotate(40deg);
+    }
+    50% {
+        transform: rotate(-40deg);
+    }
+    100% {
+        transform: rotate(40deg);
+    }
+}
+@keyframes walk2 {
+    0% {
+        transform: rotate(-40deg);
+    }
+    50% {
+        transform: rotate(40deg);
+    }
+    100% {
+        transform: rotate(-40deg);
+    }
+}
+
+@keyframes bump {
+    from {
+        top:0;
+    }
+    to {
+        top: 10px;
+    }
+}
+
+@keyframes breath {
+    from {
+        top: 50px;
+    }
+    to {
+        top: 48px;
+    }
+}
+
+@keyframes move {
+    from {
+        left: 0px;
+    }
+    to {
+        left: 300px;
+    }
+}
